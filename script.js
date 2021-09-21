@@ -41,10 +41,10 @@ bookForm.addEventListener('submit', () => {
 const removeBtn = document.querySelectorAll(".remove-btn");
 
 removeBtn.forEach((item) => item.addEventListener('click', () => {
-    let removeId = parseInt(item.id);
+    let removeBookId = parseInt(item.id);
     let obj = JSON.parse(localStorage.getItem('books'));
     booklist = obj.allbook;
-    booklist = booklist.filter((element, index) => index !== removeId);
+    booklist = booklist.filter((element, index) => index !== removeBookId);
     obj.allbook = booklist;
     localStorage.setItem("books", JSON.stringify(obj));
     window.location.reload()
