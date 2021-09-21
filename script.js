@@ -39,6 +39,8 @@ bookForm.addEventListener('submit', () => {
 
 const removeBtn = document.querySelectorAll(".remove-btn");
 
+const removeBtn = document.querySelectorAll(".remove-btn");
+
 removeBtn.forEach((item) => item.addEventListener('click', () => {
     let removeBookId = parseInt(item.id);
     let obj = JSON.parse(localStorage.getItem('books'));
