@@ -16,6 +16,7 @@ if (JSON.parse(localStorage.getItem('books')) == null) {
     <p>${item.author}</p>
     <button type="button" class="remove-btn" id="${index}">Remove</button>
     <hr>`;
+    console.log(index);
     })
     booksList.innerHTML = bookHtml;
 
@@ -42,14 +43,39 @@ bookForm.addEventListener('submit', () => {
     localStorage.setItem("books", JSON.stringify(obj));
 })
 
+const removeBtn = document.querySelector(".remove-btn");
+// removeBtn.addEventListener('click',() => {
+//   console.log(this.id);
+//   console.log("nigga");
+//   booklist = JSON.parse(localStorage.getItem('books')).allbook;
+//   booklist.forEach((item, index) => {
+//     if (index === removeBtnId) {
+//       window.localStorage.removeItem(item);
+//     }
+// });
+// });
 
-remove = () => {
-    document.querySelectorAll('.remove-btn').forEach((item, bookIndex) => {
-      item.addEventListener('click', () => {
-        const newBooksArray = this.obj.filter((booklist, index) => bookIndex !== index);
-        console.log(index.id);
-        localStorage.setItem('books', JSON.stringify(newBooksArray));// set the new book to the local storage
-        window.location.reload();// reload the page
-      });
-    });
-  }
+removeBtn.addEventListener('click',removeID);
+function removeID(){
+  const removeBtnId = this.id;
+  booklist = JSON.parse(localStorage.getItem('books')).allbook;
+  booklist.forEach((item, index) => {
+    console.log(index.toString() + 5);
+    console.log(removeBtnId + 5);
+    if (index.toString() === removeBtnId) {
+      console.log(item);
+      localStorage.removeItem(item);
+    }
+});
+}
+
+// remove = () => {
+//     document.querySelectorAll('.remove-btn').forEach((item, bookIndex) => {
+//       item.addEventListener('click', () => {
+//         const newBooksArray = this.obj.filter((booklist, index) => bookIndex !== index);
+//         console.log(index);
+//         localStorage.setItem('books', JSON.stringify(newBooksArray));// set the new book to the local storage
+//         window.location.reload();// reload the page
+//       });
+//     });
+//   }
