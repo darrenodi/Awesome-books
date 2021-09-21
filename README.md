@@ -2,7 +2,7 @@
 
 ## Screenshot
 
-![screenshot](images/app_screenshot.png)
+![screenshot](/images/app_screenshot.png)
 
 # Additional description about the project and its features.
 
@@ -42,7 +42,7 @@ To get a local copy up and running follow these simple example steps.
 - Twitter: [@twitterhandle](https://twitter.com/darrenodi)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/darren-odi-404ba31b2/)
 
-👤 **Author 4**
+👤 **Author 2**
 
 - GitHub: [@githubhandle](https://github.com/gabrielcoder247)
 
@@ -68,9 +68,5 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-<<<<<<< HEAD
 This project is [MIT](./MIT.md) licensed..
 =======
-This project is [MIT](./MIT.md) licensed.
-
-> > > > > > > 97e487e6756bf5129f691a0b4747c814133e5044
