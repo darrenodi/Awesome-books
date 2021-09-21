@@ -16,7 +16,9 @@ if (JSON.parse(localStorage.getItem('books')) == null) {
     <hr>`;
     })
     booksList.innerHTML = bookHtml;
+
 }
+
 
 const bookForm = document.querySelector("#book-form");
 const bookTitle = document.querySelector("#title");
