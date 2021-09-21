@@ -1,17 +1,39 @@
-//array for the books objects
-awesomeBooks = [];
+const booksList = document.querySelector("#book-list");
+let booklist = [];
+let bookHtml = "";
+if (JSON.parse(localStorage.getItem('books')) == null) {
 
-// function add the name of the book and it's author to the array of objects
-function add_object(title, author) { 
-  const title = document.getElementById("title").value;
-  const author = document.getElementById("author").value;
-  new_object = {
-    name : title,
-    author : author
-  }
-  awesomeBooks.push(new_object);
+    const bookObj = { allbook: booklist };
+    localStorage.setItem('books', JSON.stringify(bookObj));
+} else {
+    booklist = JSON.parse(localStorage.getItem('books')).allbook;
+
+    booklist.forEach((item, index) => {
+        bookHtml += `
+    <p>${item.title}</p>
+    <p>${item.author}</p>
+    <button type="button" class="remove-btn" id="${index}">Remove</button>
+    <hr>`;
+    })
+    booksList.innerHTML = bookHtml;
 }
 
-const addBook = document.getElementById("submit");
+const bookForm = document.querySelector("#book-form");
+const bookTitle = document.querySelector("#title");
+const bookAuthor = document.querySelector("#author");
 
-addBook.addEventlistener('submit',add_object(title,author));
+bookForm.addEventListener('submit', () => {
+    let newBook = {
+        title: bookTitle.value,
+        author: bookAuthor.value
+    };
+
+
+    let obj = JSON.parse(localStorage.getItem('books'));
+
+    obj.allbook.push(newBook);
+
+    booklist = obj.allbook;
+
+    localStorage.setItem("books", JSON.stringify(obj));
+})
