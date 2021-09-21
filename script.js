@@ -1,6 +1,8 @@
 const booksList = document.querySelector("#book-list");
 let booklist = [];
 let bookHtml = "";
+
+
 if (JSON.parse(localStorage.getItem('books')) == null) {
 
     const bookObj = { allbook: booklist };
@@ -39,3 +41,15 @@ bookForm.addEventListener('submit', () => {
 
     localStorage.setItem("books", JSON.stringify(obj));
 })
+
+
+remove = () => {
+    document.querySelectorAll('.remove-btn').forEach((item, bookIndex) => {
+      item.addEventListener('click', () => {
+        const newBooksArray = this.obj.filter((booklist, index) => bookIndex !== index);
+        console.log(index.id);
+        localStorage.setItem('books', JSON.stringify(newBooksArray));// set the new book to the local storage
+        window.location.reload();// reload the page
+      });
+    });
+  }
