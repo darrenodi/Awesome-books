@@ -2,7 +2,7 @@
 
 ## Screenshot
 
-![screenshot](./images/app_screenshot.png)
+![screenshot](images/app_screenshot.png)
 
 # Additional description about the project and its features.
 
@@ -17,7 +17,7 @@ This is a project on javascript objects. The goal of this project is to test how
 
 ## Live Demo
 
-[Live Demo Link](http://darrenodi.me/)
+[Live Demo Link](http://darrenodi.me/Awesome-books/)
 
 ## Getting Started
 
