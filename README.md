@@ -36,19 +36,21 @@ To get a local copy up and running follow these simple example steps.
 
 ## Authors
 
-👤 **Author 1**
+👤 **Darren Odi**
 
 - GitHub: [@githubhandle](https://github.com/darrenodi)
 - Twitter: [@twitterhandle](https://twitter.com/darrenodi)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/darren-odi-404ba31b2/)
 
-👤 **Author 2**
+👤 **GABRIEL NWACHUKWU**
 
 - GitHub: [@githubhandle](https://github.com/gabrielcoder247)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/gabriel-nwachukwu-209613173/)
 
-👤 **Author 3**
+👤 **Laxmi Basnet**
 
 - GitHub: [@githubhandle](https://github.com/basnetlaxmi)
+- LinkedIn: [LinkedIn](https://np.linkedin.com/in/laxmi-basnet-b22403131)
 
 ## 🤝 Contributing
 
@@ -62,9 +64,8 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Microverse
+- Microverse Coding Partners
 
 ## 📝 License
 
