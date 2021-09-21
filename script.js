@@ -33,17 +33,15 @@ bookForm.addEventListener('submit', () => {
 
   booklist = obj.allbook;
 
-  localStorage.setItem('books', JSON.stringify(obj));
+  const removeBtn = document.querySelectorAll('.remove-btn');
+
+  removeBtn.forEach((item) => item.addEventListener('click', () => {
+    const removeBookId = parseInt(item.id, 10);
+    const obj = JSON.parse(localStorage.getItem('books'));
+    booklist = obj.allbook;
+    booklist = booklist.filter((element, index) => index !== removeBookId);
+    obj.allbook = booklist;
+    localStorage.setItem('books', JSON.stringify(obj));
+    window.location.reload();
+  }));
 });
-
-const removeBtn = document.querySelectorAll('.remove-btn');
-
-removeBtn.forEach((item) => item.addEventListener('click', () => {
-  const removeBookId = parseInt(item.id, 10);
-  const obj = JSON.parse(localStorage.getItem('books'));
-  booklist = obj.allbook;
-  booklist = booklist.filter((element, index) => index !== removeBookId);
-  obj.allbook = booklist;
-  localStorage.setItem('books', JSON.stringify(obj));
-  window.location.reload();
-}));
