@@ -32,6 +32,7 @@ bookForm.addEventListener('submit', () => {
   obj.allbook.push(newBook);
 
   booklist = obj.allbook;
+  localStorage.setItem('books', JSON.stringify(obj));
 
   const removeBtn = document.querySelectorAll('.remove-btn');
 
