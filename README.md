@@ -2,7 +2,7 @@
 
 ## Screenshot
 
-![screenshot](/images/app_screenshot.png)
+![screenshot](/images/app_screenshot.PNG)
 
 # Additional description about the project and its features.
 
