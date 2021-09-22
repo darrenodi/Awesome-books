@@ -19,6 +19,7 @@ class Book {
       localStorage.setItem('books', JSON.stringify(Book.books));
     }
 }
+
 let bookHtml = '';
 Book.books = JSON.parse(localStorage.getItem('books'));
 Book.books.forEach((item, index) => {
@@ -28,6 +29,7 @@ Book.books.forEach((item, index) => {
     <button type="button" class="remove-btn" id="${index}">Remove</button>
     <hr><br>`;
 });
+
 booksList.innerHTML = bookHtml;
 bookForm.addEventListener('submit', () => {
   const newBook = new Book(bookTitle.value, bookAuthor.value);
