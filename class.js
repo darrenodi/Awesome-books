@@ -29,8 +29,6 @@ Book.books.forEach((item, index) => {
     <hr><br>`;
 });
 booksList.innerHTML = bookHtml;
-// console.log(Book.books);
-
 bookForm.addEventListener('submit', () => {
   const newBook = new Book(bookTitle.value, bookAuthor.value);
   newBook.add();
