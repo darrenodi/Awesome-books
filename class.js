@@ -26,10 +26,10 @@ Book.books.forEach((item, index) => {
     <p>${item.title}</p>
     <p>${item.author}</p>
     <button type="button" class="remove-btn" id="${index}">Remove</button>
-    <hr>`;
+    <hr><br>`;
 });
 booksList.innerHTML = bookHtml;
-console.log(Book.books);
+// console.log(Book.books);
 
 bookForm.addEventListener('submit', () => {
   const newBook = new Book(bookTitle.value, bookAuthor.value);
@@ -39,12 +39,10 @@ bookForm.addEventListener('submit', () => {
 const removeBtn = document.querySelectorAll('.remove-btn');
 
 removeBtn.forEach((item) => item.addEventListener('click', () => {
-  console.log(item.id);
   const removeId = parseInt(item.id, 10);
-  const obj = JSON.parse(localStorage.getItem('books'));
-  console.log(obj);
-  obj.filter((element, index) => index !== removeId);
-  localStorage.setItem('books', JSON.stringify(obj));
-
-  // window.location.reload();
+  let booklist = Book.books;
+  booklist = booklist.filter((element, index) => index !== removeId);
+  Book.books = booklist;
+  localStorage.setItem('books', JSON.stringify(booklist));
+  window.location.reload();
 }));
