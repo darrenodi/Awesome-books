@@ -1,27 +1,46 @@
 const bookForm = document.querySelector('#book-form');
 const bookTitle = document.querySelector('#title');
 const bookAuthor = document.querySelector('#author');
+const booksList = document.querySelector('#book-list');
 
 class Book {
-  constructor(title, author, id) {
-    this.title = title;
-    this.author = author;
-    if (id !== undefined) {
-      this.id = id;
+    constructor(title, author, id) {
+        this.title = title;
+        this.author = author;
+        if (id !== undefined) {
+            this.id = id;
+        }
     }
-  }
 
-   static books = JSON.parse(localStorage.getItem('books')) || [];
+    static books = JSON.parse(localStorage.getItem('books')) || [];
 
-   add() {
-     Book.books.push(this);
-     localStorage.setItem('books', JSON.stringify(Book.books));
-   }
+
+    add() {
+        Book.books.push(this);
+        localStorage.setItem('books', JSON.stringify(Book.books));
+    }
+
+
+
 }
+let bookHtml = '';
+Book.books = JSON.parse(localStorage.getItem('books'));
+Book.books.forEach((item, index) => {
+    bookHtml += `
+    <p>${item.title}</p>
+    <p>${item.author}</p>
+    <button type="button" class="remove-btn" id="${index}">Remove</button>
+    <hr>`;
+});
+booksList.innerHTML = bookHtml;
+console.log(Book.books)
+
+
+
 
 bookForm.addEventListener('submit', () => {
-  const newBook = new Book(bookTitle.value, bookAuthor.value);
-  newBook.add();
+    const newBook = new Book(bookTitle.value, bookAuthor.value);
+    newBook.add();
 });
 
 
