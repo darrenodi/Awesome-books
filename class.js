@@ -24,23 +24,24 @@ bookForm.addEventListener('submit', () => {
   newBook.add();
 });
 
-const booksList = document.querySelector('#book-list');
-// let booklist = [];
-// let bookHtml = '';
-if (JSON.parse(localStorage.getItem('books')) == null) {
-  const bookObj = { allbook: booklist };
-  localStorage.setItem('books', JSON.stringify(bookObj));
-} else {
-  booklist = JSON.parse(localStorage.getItem('books')).allbook;
-  booklist.forEach((item, index) => {
-    bookHtml += `
- <p>${item.title}</p>
- <p>${item.author}</p>
- <button type="button" class="remove-btn" id="${index}">Remove</button>
- <hr>`;
-  });
-  booksList.innerHTML = bookHtml;
-}
+
+// const booksList = document.querySelector('#book-list');
+// // let booklist = [];
+// // let bookHtml = '';
+// if (JSON.parse(localStorage.getItem('books')) == null) {
+//   const bookObj = { allbook: booklist };
+//   localStorage.setItem('books', JSON.stringify(bookObj));
+// } else {
+//   booklist = JSON.parse(localStorage.getItem('books')).allbook;
+//   booklist.forEach((item, index) => {
+//     bookHtml += `
+//  <p>${item.title}</p>
+//  <p>${item.author}</p>
+//  <button type="button" class="remove-btn" id="${index}">Remove</button>
+//  <hr>`;
+//   });
+//   booksList.innerHTML = bookHtml;
+// }
 
 // const removeBtn = document.querySelectorAll('.remove-btn');
 
