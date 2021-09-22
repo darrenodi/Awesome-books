@@ -2,3 +2,71 @@
   margin: 0;
   padding: 0;
 }
+
+body {
+  display: flex;
+  justify-content: center;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  color: black;
+}
+
+body main h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.books-table {
+  border: 3px solid black;
+  padding: 5px 0;
+}
+
+.books-table > *:nth-child(odd) {
+  background: #e0dede;
+}
+
+.books-table button,
+.submitbtn {
+  border: 2px solid black;
+  box-shadow: 2px 2px;
+  padding: 2px;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+}
+
+.onebook {
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 90px;
+  margin-bottom: 2px;
+}
+
+.separator {
+  border: 1px solid black;
+  margin: 40px auto;
+  width: 20%;
+}
+
+.formSection {
+  display: block;
+  text-align: center;
+}
+
+.formSection .bookname,
+.authorname {
+  border: 2px solid black;
+}
+
+.submitbtn {
+  justify-self: flex-end;
+}
+
+form {
+  padding: 5px 180px 5px 180px;
+  display: block;
+}
+
+form > *:last-child {
+  float: right;
+}
