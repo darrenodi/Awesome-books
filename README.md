@@ -6,7 +6,7 @@
 
 # Additional description about the project and its features.
 
-This is a project on javascript objects. The goal of this project is to test how to add and remove objects from local storage and get used to using Javascript objects.
+This is a project on javascript objects. The goal of this project is to test how to add and remove objects from local storage and get used to using Javascript objects. The project has been further modified to include the use of classes rather than object and arrays.
 
 ## Built With
 
@@ -69,5 +69,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](./MIT.md) licensed..
-=======
+# This project is [MIT](./MIT.md) licensed..
