@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-expressions */
+/* eslint-disable getter-return */
 const bookForm = document.querySelector('#book-form');
 const bookTitle = document.querySelector('#title');
 const bookAuthor = document.querySelector('#author');
@@ -18,7 +20,7 @@ class Book {
       Book.books.push(this);
       localStorage.setItem('books', JSON.stringify(Book.books));
     }
-    
+
     remove() {
       const removeId = parseInt(this.id, 10);
       console.log(removeId);
@@ -29,6 +31,8 @@ class Book {
       window.location.reload();
     }
 
+    // eslint-disable-next-line getter-return
+    // eslint-disable-next-line class-methods-use-this
     get theDisplay() {
       let bookHtml = '';
       Book.books = JSON.parse(localStorage.getItem('books'));
@@ -38,7 +42,8 @@ class Book {
       Book.books.forEach((item, index) => {
         bookHtml += `
           <div class="onebook">
-          <p class="book-info">"${item.title}" by ${item.author}</p>
+          <p class="book-info">"${item.title}" </p>
+          <p class="book-info"> ${item.author}</p>
           <button type="button" class="remove-btn" id="${index}">Remove</button>
           </div>
           `;
