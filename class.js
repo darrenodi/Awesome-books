@@ -1,3 +1,6 @@
+/* eslint-disable getter-return */
+/* eslint-disable no-unused-expressions */
+/* eslint-disable class-methods-use-this */
 const bookForm = document.querySelector('#book-form');
 const bookTitle = document.querySelector('#title');
 const bookAuthor = document.querySelector('#author');
