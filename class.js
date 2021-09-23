@@ -30,15 +30,25 @@ class Book {
 
     get thedisplay() {
       let bookHtml = '';
-      Book.books = JSON.parse(localStorage.getItem('books'));
-      Book.books.forEach((item, index) => {
+      let arrayOne = JSON.parse(localStorage.getItem('books'));
+      arrayOne.forEach(displayBooks);
+      function displayBooks(item,index) {
         bookHtml += `
           <div class="onebook">
           <p class="book-info">"${item.title}" by ${item.author}</p>
           <button type="button" class="remove-btn" id="${index}">Remove</button>
           </div>
           `;
-      });
+      }
+      // Book.books = JSON.parse(localStorage.getItem('books'));
+      // Book.books.forEach((item, index) => {
+      //   bookHtml += `
+      //     <div class="onebook">
+      //     <p class="book-info">"${item.title}" by ${item.author}</p>
+      //     <button type="button" class="remove-btn" id="${index}">Remove</button>
+      //     </div>
+      //     `;
+      // });
 
       booksList.innerHTML = bookHtml;
     }
