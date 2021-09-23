@@ -73,4 +73,5 @@ form > *:last-child {
 form {
   padding: 5px 180px 5px 180px;
   display: block;
+  margin: 0;
 }
