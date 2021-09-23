@@ -1,6 +1,8 @@
+
 /* eslint-disable getter-return */
 /* eslint-disable no-unused-expressions */
 /* eslint-disable class-methods-use-this */
+
 const bookForm = document.querySelector('#book-form');
 const bookTitle = document.querySelector('#title');
 const bookAuthor = document.querySelector('#author');
@@ -32,7 +34,11 @@ class Book {
       window.location.reload();
     }
 
-    get thedisplay() {
+
+    // eslint-disable-next-line getter-return
+    // eslint-disable-next-line class-methods-use-this
+    get theDisplay() {
+
       let bookHtml = '';
       Book.books = JSON.parse(localStorage.getItem('books'));
       if (Book.books === null) {
@@ -41,7 +47,10 @@ class Book {
       Book.books.forEach((item, index) => {
         bookHtml += `
           <div class="onebook">
-          <p class="book-info">"${item.title}" by ${item.author}</p>
+
+          <p class="book-info">"${item.title}" </p>
+          <p class="book-info"> ${item.author}</p>
+
           <button type="button" class="remove-btn" id="${index}">Remove</button>
           </div>
           `;
@@ -57,10 +66,13 @@ bookForm.addEventListener('submit', () => {
 });
 
 const getBooks = new Book(bookTitle.value, bookAuthor.value);
+
 getBooks.thedisplay;
+
 
 const removeBtn = document.querySelectorAll('.remove-btn');
 removeBtn.forEach((item) => item.addEventListener('click', () => {
   const removeBook = new Book(bookTitle.value, bookAuthor.value, item.id);
   removeBook.remove();
 }));
+
