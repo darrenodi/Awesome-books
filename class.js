@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-expressions */
-/* eslint-disable getter-return */
 const bookForm = document.querySelector('#book-form');
 const bookTitle = document.querySelector('#title');
 const bookAuthor = document.querySelector('#author');
@@ -23,7 +21,7 @@ class Book {
 
     remove() {
       const removeId = parseInt(this.id, 10);
-      console.log(removeId);
+
       let booklist = Book.books;
       booklist = booklist.filter((element, index) => index !== removeId);
       Book.books = booklist;
@@ -31,9 +29,7 @@ class Book {
       window.location.reload();
     }
 
-    // eslint-disable-next-line getter-return
-    // eslint-disable-next-line class-methods-use-this
-    get theDisplay() {
+    static thedisplay() {
       let bookHtml = '';
       Book.books = JSON.parse(localStorage.getItem('books'));
       if (Book.books === null) {
@@ -42,13 +38,11 @@ class Book {
       Book.books.forEach((item, index) => {
         bookHtml += `
           <div class="onebook">
-          <p class="book-info">"${item.title}" </p>
-          <p class="book-info"> ${item.author}</p>
+          <p class="book-info">"${item.title}" by ${item.author}</p>
           <button type="button" class="remove-btn" id="${index}">Remove</button>
           </div>
           `;
       });
-
       booksList.innerHTML = bookHtml;
     }
 }
@@ -58,8 +52,7 @@ bookForm.addEventListener('submit', () => {
   newBook.add();
 });
 
-const getBooks = new Book(bookTitle.value, bookAuthor.value);
-getBooks.theDisplay;
+Book.thedisplay();
 
 const removeBtn = document.querySelectorAll('.remove-btn');
 removeBtn.forEach((item) => item.addEventListener('click', () => {

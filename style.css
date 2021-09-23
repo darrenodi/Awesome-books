@@ -2,3 +2,76 @@
   margin: 0;
   padding: 0;
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  color: black;
+  margin-top: 15px;
+}
+
+body main h1 {
+  margin-bottom: 10px;
+}
+
+.books-table {
+  border: 3px solid black;
+  padding: 5px 0;
+  width: 70%;
+}
+
+form > *:last-child {
+  float: right;
+}
+
+.books-table > *:nth-child(odd) {
+  background: #e0dede;
+}
+
+.books-table button,
+.submitbtn {
+  border: 2px solid black;
+  box-shadow: 2px 2px;
+  padding: 2px;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+}
+
+.onebook {
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 90px;
+  margin-bottom: 2px;
+}
+
+.separator {
+  border: 1px solid black;
+  margin: 40px auto;
+  width: 20%;
+}
+
+.formSection {
+  display: block;
+  text-align: center;
+}
+
+.formSection .bookname,
+.authorname {
+  border: 2px solid black;
+  padding: 4px;
+}
+
+.submitbtn {
+  justify-self: flex-end;
+}
+
+form {
+  padding: 5px 180px 5px 180px;
+  display: block;
+  margin: 0;
+}
