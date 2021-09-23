@@ -18,31 +18,46 @@ class Book {
       Book.books.push(this);
       localStorage.setItem('books', JSON.stringify(Book.books));
     }
+    
+    remove() {
+      const removeId = parseInt(this.id, 10);
+      console.log(removeId);
+      let booklist = Book.books;
+      booklist = booklist.filter((element, index) => index !== removeId);
+      Book.books = booklist;
+      localStorage.setItem('books', JSON.stringify(booklist));
+      window.location.reload();
+    }
+
+    get theDisplay() {
+      let bookHtml = '';
+      Book.books = JSON.parse(localStorage.getItem('books'));
+      if (Book.books === null) {
+        Book.books = [];
+      }
+      Book.books.forEach((item, index) => {
+        bookHtml += `
+          <div class="onebook">
+          <p class="book-info">"${item.title}" by ${item.author}</p>
+          <button type="button" class="remove-btn" id="${index}">Remove</button>
+          </div>
+          `;
+      });
+
+      booksList.innerHTML = bookHtml;
+    }
 }
 
-let bookHtml = '';
-Book.books = JSON.parse(localStorage.getItem('books'));
-Book.books.forEach((item, index) => {
-  bookHtml += `
-    <p>${item.title}</p>
-    <p>${item.author}</p>
-    <button type="button" class="remove-btn" id="${index}">Remove</button>
-    <hr><br>`;
-});
-
-booksList.innerHTML = bookHtml;
 bookForm.addEventListener('submit', () => {
   const newBook = new Book(bookTitle.value, bookAuthor.value);
   newBook.add();
 });
 
-const removeBtn = document.querySelectorAll('.remove-btn');
+const getBooks = new Book(bookTitle.value, bookAuthor.value);
+getBooks.theDisplay;
 
+const removeBtn = document.querySelectorAll('.remove-btn');
 removeBtn.forEach((item) => item.addEventListener('click', () => {
-  const removeId = parseInt(item.id, 10);
-  let booklist = Book.books;
-  booklist = booklist.filter((element, index) => index !== removeId);
-  Book.books = booklist;
-  localStorage.setItem('books', JSON.stringify(booklist));
-  window.location.reload();
+  const removeBook = new Book(bookTitle.value, bookAuthor.value, item.id);
+  removeBook.remove();
 }));
