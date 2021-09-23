@@ -21,6 +21,7 @@ class Book {
     
     remove() {
       const removeId = parseInt(this.id, 10);
+      console.log(removeId);
       let booklist = Book.books;
       booklist = booklist.filter((element, index) => index !== removeId);
       Book.books = booklist;
@@ -31,7 +32,6 @@ class Book {
     get thedisplay() {
       let bookHtml = '';
       Book.books = JSON.parse(localStorage.getItem('books'));
-      console.log(this.books);
       if (Book.books === null) {
         Book.books = [];
       }
@@ -53,11 +53,11 @@ bookForm.addEventListener('submit', () => {
   newBook.add();
 });
 
+const getBooks = new Book(bookTitle.value, bookAuthor.value);
+getBooks.thedisplay;
+
 const removeBtn = document.querySelectorAll('.remove-btn');
 removeBtn.forEach((item) => item.addEventListener('click', () => {
   const removeBook = new Book(bookTitle.value, bookAuthor.value, item.id);
   removeBook.remove();
 }));
-
-const getBooks = new Book(bookTitle.value, bookAuthor.value);
-getBooks.thedisplay;
