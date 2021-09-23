@@ -1,4 +1,3 @@
-
 /* eslint-disable getter-return */
 /* eslint-disable no-unused-expressions */
 /* eslint-disable class-methods-use-this */
@@ -34,11 +33,9 @@ class Book {
       window.location.reload();
     }
 
-
     // eslint-disable-next-line getter-return
     // eslint-disable-next-line class-methods-use-this
     get theDisplay() {
-
       let bookHtml = '';
       Book.books = JSON.parse(localStorage.getItem('books'));
       if (Book.books === null) {
@@ -69,10 +66,8 @@ const getBooks = new Book(bookTitle.value, bookAuthor.value);
 
 getBooks.thedisplay;
 
-
 const removeBtn = document.querySelectorAll('.remove-btn');
 removeBtn.forEach((item) => item.addEventListener('click', () => {
   const removeBook = new Book(bookTitle.value, bookAuthor.value, item.id);
   removeBook.remove();
 }));
-
