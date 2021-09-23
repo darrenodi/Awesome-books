@@ -44,7 +44,6 @@ class Book {
           `;
       });
       booksList.innerHTML = bookHtml;
-      return 0;
     }
 }
 
