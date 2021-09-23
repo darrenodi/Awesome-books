@@ -31,7 +31,10 @@ class Book {
     get thedisplay() {
       let bookHtml = '';
       let arrayOne = JSON.parse(localStorage.getItem('books'));
-      arrayOne.forEach(displayBooks);
+      let thisArray = [1,2,3,4,6];
+      console.log(thisArray);
+      console.log(arrayOne);
+      Array.from(arrayOne).forEach(displayBooks);
       function displayBooks(item,index) {
         bookHtml += `
           <div class="onebook">
