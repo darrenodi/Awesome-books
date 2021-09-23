@@ -24,7 +24,7 @@ class Book {
 
     remove() {
       const removeId = parseInt(this.id, 10);
-      console.log(removeId);
+
       let booklist = Book.books;
       booklist = booklist.filter((element, index) => index !== removeId);
       Book.books = booklist;
