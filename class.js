@@ -1,6 +1,3 @@
-/* eslint-disable getter-return */
-/* eslint-disable no-unused-expressions */
-/* eslint-disable class-methods-use-this */
 const bookForm = document.querySelector('#book-form');
 const bookTitle = document.querySelector('#title');
 const bookAuthor = document.querySelector('#author');
@@ -32,7 +29,7 @@ class Book {
       window.location.reload();
     }
 
-    get thedisplay() {
+    static thedisplay() {
       let bookHtml = '';
       Book.books = JSON.parse(localStorage.getItem('books'));
       if (Book.books === null) {
@@ -46,8 +43,8 @@ class Book {
           </div>
           `;
       });
-
       booksList.innerHTML = bookHtml;
+      return 0;
     }
 }
 
@@ -56,8 +53,7 @@ bookForm.addEventListener('submit', () => {
   newBook.add();
 });
 
-const getBooks = new Book(bookTitle.value, bookAuthor.value);
-getBooks.thedisplay;
+Book.thedisplay();
 
 const removeBtn = document.querySelectorAll('.remove-btn');
 removeBtn.forEach((item) => item.addEventListener('click', () => {
