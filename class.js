@@ -18,7 +18,7 @@ class Book {
       Book.books.push(this);
       localStorage.setItem('books', JSON.stringify(Book.books));
     }
-    
+
     remove() {
       const removeId = parseInt(this.id, 10);
       console.log(removeId);
