@@ -30,35 +30,23 @@ class Book {
 
     get thedisplay() {
       let bookHtml = '';
-      let arrayOne = JSON.parse(localStorage.getItem('books'));
-      let thisArray = [1,2,3,4,6];
-      console.log(thisArray);
-      console.log(arrayOne);
-      Array.from(arrayOne).forEach(displayBooks);
-      function displayBooks(item,index) {
+      Book.books = JSON.parse(localStorage.getItem('books'));
+      console.log(this.books);
+      if (Book.books === null) {
+        Book.books = [];
+      }
+      Book.books.forEach((item, index) => {
         bookHtml += `
           <div class="onebook">
           <p class="book-info">"${item.title}" by ${item.author}</p>
           <button type="button" class="remove-btn" id="${index}">Remove</button>
           </div>
           `;
-      }
-      // Book.books = JSON.parse(localStorage.getItem('books'));
-      // Book.books.forEach((item, index) => {
-      //   bookHtml += `
-      //     <div class="onebook">
-      //     <p class="book-info">"${item.title}" by ${item.author}</p>
-      //     <button type="button" class="remove-btn" id="${index}">Remove</button>
-      //     </div>
-      //     `;
-      // });
+      });
 
       booksList.innerHTML = bookHtml;
     }
 }
-
-const getBooks = new Book(bookTitle.value, bookAuthor.value);
-getBooks.thedisplay;
 
 bookForm.addEventListener('submit', () => {
   const newBook = new Book(bookTitle.value, bookAuthor.value);
@@ -70,3 +58,6 @@ removeBtn.forEach((item) => item.addEventListener('click', () => {
   const removeBook = new Book(bookTitle.value, bookAuthor.value, item.id);
   removeBook.remove();
 }));
+
+const getBooks = new Book(bookTitle.value, bookAuthor.value);
+getBooks.thedisplay;
