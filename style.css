@@ -74,16 +74,22 @@ form>*:last-child {
     float: right;
 }
 
-<
-.books-table>*:nth-child(odd) {
-    background: #e0dede;
 
+.books-table {
+    border: 3px solid black;
+    padding: 5px 0;
+    width: 70%;
+}
+  
 form > *:last-child {
-  float: right;
+    float: right;
+}
+
+.books-table > *:nth-child(odd) {
+    background: #e0dede;
 }
 
 
-}
 
 .books-table button,
 .submitbtn {
