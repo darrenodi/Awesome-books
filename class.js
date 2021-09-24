@@ -18,6 +18,7 @@ class Book {
       Book.books.push(this);
       localStorage.setItem('books', JSON.stringify(Book.books));
       this.show();
+      window.location.reload();
     }
 
     remove() {
@@ -28,10 +29,6 @@ class Book {
       Book.books = booklist;
       localStorage.setItem('books', JSON.stringify(booklist));
       window.location.reload();
-    }
-
-    show() {
-      this.alert('Added Successfully');
     }
 
     static thedisplay() {

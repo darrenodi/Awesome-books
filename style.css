@@ -12,10 +12,9 @@ body {
 nav {
     display: flex;
     width: 95%;
-    justify-content: space-between;
     border: 2px solid black;
     padding: 10px;
-    margin: 10px;
+    
 }
 
 nav ul {
@@ -38,7 +37,7 @@ nav a {
 
 .navbar {
     display: flex;
-    border: 1px solid black;
+    
     justify-content: space-around;
     align-items: center;
     height: 100px;
@@ -54,7 +53,7 @@ nav a {
 .navbar .navbar-list li::after {
     content: '';
     border-right: 2px solid black;
-    margin: 5px;
+    margin: 10px;
 }
 
 body main h1 {
@@ -147,8 +146,12 @@ footer {
     display: none;
 }
 
-span {
-    float: right;
+.date {
+  display: flex;
+  justify-content: flex-end;
+}
+#date-time {
+    
     margin-right: 25px;
     margin-bottom: 10px;
 }
