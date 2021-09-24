@@ -13,16 +13,14 @@
     <main>
         <section class="header"> 
         <nav class="navbar"> 
-            <a href="#">Logo</a>
-            <ul class="navbar-list">
-                <li class="list"><a href="#">List</a></li>
-                <li class="new"><a href="#">Add New</a></li>
-                <li class="contact"><a href="#">Contact</a></li>
+            <a href="#">Awesome Books</a>
+            <ul>
+                <li><a id="fowl_touch" class="menus listlink" href="">List | </a></li>
+                <li><a  class="menus listlink" href="">Add New | </a></li>
+                <li><a  class="menus listlink" href="">Contact</a></li>
             </ul>
         </nav>
-     </section> 
-
-        <section class="container">
+        <section class="container listlink">
         <h1 class="pageTitle">All awesome books</h1>
         <div id="book-list" class="books-table">
             
@@ -30,29 +28,46 @@
         </section>
 
         <!-- <hr class="separator">  -->
-        <section class="form">
 
-        <div class="formSection">
-            <h1>Add a new book</h1>
-            <form id=book-form>
-                <input type="text" placeholder="Title" id="title" size="40" class="bookname">
-                <br><br>
-                <input type="text" placeholder="Author" id="author" size="40" class="authorname">
-                <br><br>
-                <input type="submit" value="ADD" id="submit" class="submitbtn">
-            </form>
-       </div>
     </section>
 
-    <section class="information">
-        <h2>Contact Information</h2>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In enim ipsam ullam eligendi iure minima reicie
-            ndis excepturi unde blanditiis distinctio veniam tempore hic beatae praesentium alias totam, iusto voluptatem optio.</p>
+    <section class="addnewBook addlink">
+      <div class="formSection">
+        <h1>Add a new book</h1>
+        <form id=book-form>
+            <input type="text" placeholder="Title" id="title" size="40" class="bookname">
+            <br><br>
+            <input type="text" placeholder="Author" id="author" size="40" class="authorname">
+            <br><br>
+            <input type="submit" value="ADD" id="submit" class="submitbtn">
+        </form>
+      </div>
     </section>
+
+    <section class="contact-page contactlink">
+      <h1>Contact Information</h1>
+
+      <div>
+        <p>Do you have any questions or you just want to say "Hello"?</p>
+        <p>You can reach out to us!</p>
+      </div>
+
+      <ul>
+        <li>-  Our email: mail@mailc.com</li>
+        <li>-  Our phone number : 004323424258294</li>
+        <li>-  Our address : Streetname 22, 53215 City,Country.</li>
+      </ul>
+
+
+    </section>
+
+    <footer>
+      <p>Copyright</p>
+    </footer>
 
     </main>
     <script src="class.js"></script>
-    <script src= "function.js"></script>
+    <script src="select-link.js"></script>
 </body>
 
 </html>

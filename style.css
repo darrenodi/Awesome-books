@@ -3,14 +3,35 @@
   padding: 0;
 }
 
+body {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  color: black;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid black;
+  padding: 10px;
+  margin: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+}
+
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: "Courier New", Courier, monospace;
-  font-weight: bold;
-  color: black;
   margin-top: 15px;
 }
 
@@ -37,9 +58,8 @@
 }
 
 body main h1 {
-  
   margin-bottom: 10px;
-} 
+}
 
 .books-table {
   border: 3px solid black;
@@ -56,8 +76,6 @@ body main h1 {
   border: 2px solid black;
   box-shadow: 2px 2px;
   padding: 2px;
-  font-family: "Courier New", Courier, monospace;
-  font-weight: bold;
 }
 
 .onebook {
@@ -90,10 +108,36 @@ body main h1 {
 }
 
 form {
-  padding: 5px 180px 5px 180px;
+  padding: 5px 270px 5px 270px;
   display: block;
 }
 
 form > *:last-child {
   float: right;
+}
+
+.contact-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  margin: 50px auto;
+}
+
+.contact-page ul {
+  list-style-type: none;
+}
+
+footer {
+  border: 2px solid black;
+  padding: 10px;
+  margin: 10px;
+  position: absolute;
+  width: 96%;
+  bottom: 10px;
+}
+
+.contact-page,
+.addnewBook {
+  display: none;
 }
