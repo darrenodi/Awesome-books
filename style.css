@@ -92,12 +92,12 @@ body main h1 {
   width: 20%;
 }
 
-.formSection {
-  display: block;
+.formsection {
+  display: none;
   text-align: center;
 }
 
-.formSection .bookname,
+.formsection .bookname,
 .authorname {
   border: 2px solid black;
   padding: 4px;
@@ -117,8 +117,8 @@ form > *:last-child {
 }
 
 .contact-page {
-  display: flex;
-  flex-direction: column;
+   display: none; 
+   flex-direction: column;
   gap: 20px;
   align-items: center;
   margin: 50px auto;
