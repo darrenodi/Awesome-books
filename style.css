@@ -59,7 +59,9 @@ nav a {
 }
 
 body main h1 {
+
     margin-bottom: 10px;
+
 }
 
 .books-table {
@@ -72,8 +74,15 @@ form>*:last-child {
     float: right;
 }
 
+<
 .books-table>*:nth-child(odd) {
     background: #e0dede;
+
+form > *:last-child {
+  float: right;
+}
+
+
 }
 
 .books-table button,
@@ -122,6 +131,7 @@ form>*:last-child {
     margin: auto;
 }
 
+
 .contact-page {
     display: none;
     flex-direction: column;
@@ -151,6 +161,7 @@ footer {
 .date {
   display: flex;
   justify-content: flex-end;
+
 }
 #date-time {
     
