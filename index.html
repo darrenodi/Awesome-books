@@ -5,33 +5,74 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/luxon@2.0.2/build/global/luxon.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <title>Awesome Books</title>
 </head>
 
+<body>
+
     <main>
-        <section class="container">
-        <h1 class="pageTitle">All awesome books</h1>
-        <div id="book-list" class="books-table">
-            
+        <section class="header">
+            <nav class="navbar">
+                <a href="#">Awesome Books</a>
+                <ul class="navbar-list">
+                    <li class="list"><a href="#">List </a></li>
+                    <li class="new"><a href="#">Add New</a></li>
+                    <li class="contact"><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </section>
+        <div class="date">
+        <span id="date-time"></span>
         </div>
+        <section class="container">
+            <h1 class="pageTitle">All awesome books</h1>
+            <div id="book-list" class="books-table">
 
-        <hr class="separator"> 
+            </div>
+        </section>
 
-        <div class="formSection">
+        <!-- <hr class="separator">  -->
+
+        <!-- <section class="addnewBook addlink"> -->
+        <div class="formsection">
             <h1>Add a new book</h1>
             <form id=book-form>
+
                 <input type="text" placeholder="Title" id="title" size="40" class="bookname">
                 <br><br>
                 <input type="text" placeholder="Author" id="author" size="40" class="authorname">
                 <br><br>
                 <input type="submit" value="ADD" id="submit" class="submitbtn">
             </form>
-       </div>
-    </section>
+        </div>
+        <!-- </section> -->
 
+        <section class="contact-page">
+
+            <h1>Contact Information</h1>
+
+            <div>
+                <p>Do you have any questions or you just want to say "Hello"?</p>
+                <p>You can reach out to us!</p>
+            </div>
+
+            <ul>
+                <li>- Our email: mail@mailc.com</li>
+                <li>- Our phone number : 004323424258294</li>
+                <li>- Our address : Streetname 22, 53215 City,Country.</li>
+            </ul>
+
+
+        </section>
     </main>
+
+    <footer>
+        <p>Copyright</p>
+    </footer>
     <script src="class.js"></script>
+    <script src="function.js"></script>
 </body>
 
 </html>
